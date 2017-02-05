@@ -1,0 +1,28 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v0.2/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "0.2",
+    "id": "com.dellarivaproductions.microsoftteamstabs.technologyradar",
+    "version": "1.0",
+    "name": "Technology Radar",
+    "developer": {
+        "name": "Serge van den Oever",   
+        "websiteUrl": "https://github.com/svdoever/TeamsTabTechnologyRadar",
+        "privacyUrl": "https://github.com/svdoever/TeamsTabTechnologyRadar",
+        "termsOfUseUrl": "https://github.com/svdoever/TeamsTabTechnologyRadar"
+    },
+    "description" : {
+            "short": "A technology radar as a tab.",
+            "full": "Technology Radar for Microsoft Teams brings the ThoughtWorks custom technology radar as a Microsoft Teams tab."
+    },
+    "icons": {
+            "44": "radar44.png",
+            "88": "radar88.png"
+    },
+    "accentColor" : "#ffffff",
+    "configUrl": "https://raw.githack.com/svdoever/TeamsTabTechnologyRadar/master/tabConfigAdd.htm",
+    "canUpdateConfig": true,
+    "needsIdentity": false,
+    "validDomains": [
+        "raw.githack.com"
+    ]
+}

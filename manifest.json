@@ -23,6 +23,8 @@
     "canUpdateConfig": true,
     "needsIdentity": false,
     "validDomains": [
-        "raw.githubusercontent.com"
+        "raw.githubusercontent.com",
+        "github.com",
+        "radar.thoughtworks.com"
     ]
 }

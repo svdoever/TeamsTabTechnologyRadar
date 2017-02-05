@@ -19,12 +19,10 @@
             "88": "radar88.png"
     },
     "accentColor" : "#ffffff",
-    "configUrl": "https://raw.githubusercontent.com/svdoever/TeamsTabTechnologyRadar/master/tabConfigAdd.htm",
+    "configUrl": "https://raw.githack.com/svdoever/TeamsTabTechnologyRadar/master/tabConfigAdd.htm",
     "canUpdateConfig": true,
     "needsIdentity": false,
     "validDomains": [
-        "raw.githubusercontent.com",
-        "github.com",
         "radar.thoughtworks.com"
     ]
 }

@@ -15,7 +15,9 @@
 <script type="text/javascript">  
 
 microsoftTeams.initialize();
-microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
+      microsoftTeams.settings.setValidityState(true);
+
+microsoftTeams.settings.registerOnSaveHandler(function(saveEvent) {
     var sheetid = document.getElementsByName("sheetid");
     microsoftTeams.settings.setSettings({
         contentUrl: "https://radar.thoughtworks.com/?sheetid=" + sheetid.value,
@@ -28,11 +30,11 @@ microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
 });
 
 function onChange() {
-    var sheetid = document.getElementsByName("sheetid"); 
-    console.log("sheetid:" + sheetid.value);
-    if (true /*sheetid.value.length > 0*/) {
-      microsoftTeams.settings.setValidityState(true);
-    }
+    // var sheetid = document.getElementsByName("sheetid"); 
+    // console.log("sheetid:" + sheetid.value);
+    // if (true /*sheetid.value.length > 0*/) {
+    //   microsoftTeams.settings.setValidityState(true);
+    // }
 }
 </script>
 </body>

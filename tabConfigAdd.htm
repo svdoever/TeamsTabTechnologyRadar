@@ -28,7 +28,10 @@ microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
 });
 
 function onChange() {
-    microsoftTeams.settings.setValidityState(true);
+    var sheetid = document.getElementsByName("sheetid");
+    if (sheetid.value.length > 0) {
+      microsoftTeams.settings.setValidityState(true);
+    }
 }
 </script>
 </body>

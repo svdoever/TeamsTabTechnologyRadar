@@ -6,7 +6,8 @@
 <form>
   What is the Url of the public Google sheet?<br>
   Sheet Url:<br>
-  <input type="text" name="sheetid" ><br>
+  <input type="text" name="sheetid" onchange="onChange()" onkeyup="onChange()" onpaste="onChange()" oninput="onChange()" style="width:100%">
+  <br>
 </form> 
 
 <script src="https://statics.teams.microsoft.com/sdk/v0.2/js/MicrosoftTeams.js"></script>
@@ -26,7 +27,7 @@ microsoftTeams.settings.registerOnSaveHandler(function(saveEvent){
     saveEvent.notifySuccess();
 });
 
-function onClick() {
+function onChange() {
     microsoftTeams.settings.setValidityState(true);
 }
 </script>

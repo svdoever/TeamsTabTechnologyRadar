@@ -4,10 +4,11 @@
 <body>
 
 <form>
-  What is the Url of the public Google sheet?<br>
-  Sheet Url:<br>
-  <input type="text" name="sheetid" onchange="onChange()" onkeyup="onChange()" onpaste="onChange()" oninput="onChange()" style="width:100%">
-  <br>
+  <p>What is the Url of the public Google sheet containing the Technology Radar?</p>
+  <p>Sheet Url:
+    <br>
+    <input type="text" name="sheetid" onchange="onChange()" onkeyup="onChange()" onpaste="onChange()" oninput="onChange()" style="width:100%">
+  </p>
 </form> 
 
 <script src="https://statics.teams.microsoft.com/sdk/v0.2/js/MicrosoftTeams.js"></script>
@@ -15,12 +16,12 @@
 <script type="text/javascript">  
 
 microsoftTeams.initialize();
-      microsoftTeams.settings.setValidityState(true);
+microsoftTeams.settings.setValidityState(true);
 
 microsoftTeams.settings.registerOnSaveHandler(function(saveEvent) {
     var sheetid = document.getElementsByName("sheetid");
     microsoftTeams.settings.setSettings({
-        contentUrl: "https://radar.thoughtworks.com/?sheetid=" + encodeURI(sheetid.value),
+        contentUrl: "https://www.google.com", //https://radar.thoughtworks.com/?sheetid=" + encodeURI(sheetid.value),
         suggestedTabName: "Radar",
         websiteUrl: "https://github.com/svdoever/TeamsTabTechnologyRadar",
         removeUrl: "https://raw.githack.com/svdoever/TeamsTabTechnologyRadar/master/tabRemove.htm"

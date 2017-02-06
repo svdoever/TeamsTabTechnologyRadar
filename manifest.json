@@ -23,6 +23,9 @@
     "canUpdateConfig": true,
     "needsIdentity": false,
     "validDomains": [
-        "radar.thoughtworks.com"
+        "*.thoughtworks.com",
+        "*.google.com",
+        "*.github.com",
+        "*.githack.com"
     ]
 }

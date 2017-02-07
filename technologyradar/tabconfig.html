@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form id="radarform" style="display: none;">
+      <p>
+        Add a Technology Radar to your teams site. See <a href="https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html" target="_blank">here</a> for more information on how to create the Technology Radar using Google Sheets.
+        You can also open the <a href="https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit" target="_blank">example public Technology Radar Google Sheet</a>, make a copy (<code>File > Make a copy..</code>) and publish it to the web (<code>File > Publish to the web...</code>).
+      <p>
+        What is the Url of the public Google Sheet containing the Technology Radar? (use the Url of the created Google Sheets document):<br>
+        <input type="text" id="sheetUri" onchange="onChange()" onkeyup="onChange()" onpaste="onChange()" oninput="onChange()" style="width:100%">
+      </p>
+    </form>
+    <div id="editradar" style="display: none;">
+      <p>The Technology Radar is driven by a Google Sheets document.</p>
+      <p><a id="googleSheetsDocumentUri" target="_blank">Edit the Technology Radar Google Sheets document</a></p>
+    </div>
+    
+    <script src="https://statics.teams.microsoft.com/sdk/v0.3/js/MicrosoftTeams.min.js"></script>
+    <script type="text/javascript">
+        microsoftTeams.initialize();
+
+        // if already configured give user option to edit the Technology Radar
+        microsoftTeams.settings.getSettings(function(settings) { 
+          var customSettings = settings.customSettings !== ''? JSON.parse(settings.customSettings) : {};
+          
+          if (!!customSettings.sheetUri) { // already configured
+            document.getElementById('googleSheetsDocumentUri').href = customSettings.sheetUri;
+            document.getElementById('editradar').style.display = 'block';
+            microsoftTeams.settings.setValidityState(true); // can always press Save
+          } else {
+            document.getElementById('radarform').style.display = 'block';
+            microsoftTeams.settings.registerOnSaveHandler(save);
+          }
+        });
+
+	      function onChange() {
+          microsoftTeams.settings.setValidityState(true);
+	      }
+        
+        function save(saveEvent) {
+      	  var sheetUri = document.getElementById("sheetUri").value;
+          var tabContentUri = "https://radar.thoughtworks.com/?sheetId=" + encodeURIComponent(sheetUri);
+
+          microsoftTeams.settings.setSettings({
+            contentUrl: tabContentUri,
+            suggestedTabName: "Radar",
+            websiteUrl: "https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html",
+            removeUrl: window.location.origin + "/technologyradar/tabremove.html",
+            customSettings: JSON.stringify({
+              sheetUri: sheetUri
+            })
+          });
+ 
+          saveEvent.notifySuccess();
+        }
+    </script>
+  </body>
+
+</html>

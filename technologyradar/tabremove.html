@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>You will remove the Technology Radar from this teams site. Note however that the Google Sheets document driving this Technology Radar will not be removed.</p>
+		<p id="linkToRadar" style="display: none;"><a id="googleSheetsDocumentUri" target="_blank">The Technology Radar Google Sheets document</a></p>
+		<script src="https://statics.teams.microsoft.com/sdk/v0.3/js/MicrosoftTeams.min.js"></script>
+		<script type="text/javascript">
+			microsoftTeams.initialize();
+			microsoftTeams.settings.getSettings(function(settings) { 
+          		var customSettings = settings.customSettings !== ''? JSON.parse(settings.customSettings) : {};
+          		alert(JSON.stringify(customSettings));
+          		if (!!customSettings.sheetUri) { // is configured
+            		document.getElementById('googleSheetsDocumentUri').href = customSettings.sheetUri;
+            		document.getElementById('linkToRadar').style.display = 'block';
+          		}
+        	});
+			microsoftTeams.settings.setValidityState(true);
+			microsoftTeams.settings.registerOnRemoveHandler(function(removeEvent) {
+				removeEvent.notifySuccess();
+			});
+		</script>
+	</body>
+</html>

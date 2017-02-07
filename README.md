@@ -9,12 +9,15 @@ Technology Radar for Microsoft Teams brings the ThoughtWorks custom technology r
 3. Select the "Developer (Preview)" tab and upload the TeamsTabTechnologyRadar.zip file
 4. Go to the channel where you want to add the Technoloy Radar, and hit the + sign in the top navigation, you will now see the Technology Radar icon
 5. Accept the developer license terms, and select the published Google sheet url 
-7. Press “Save”, and you should now see your YTechnology Radar showing up in your relevant Microsoft Team channel!
+7. Press “Save”, and you should now see your Technology Radar showing up in your relevant Microsoft Team channel!
 
 Keep in mind that you can always configure an existing tab by using the tab contextual menu and clicking on "Configure".
 
+## Screenshots
+
+
 ## Build
-The package file "TeamsTabTechnologyRadar.zip" is comprised of 3 files :
+The package file "TeamsTabTechnologyRadar.zip" consists of 3 files:
 - manifest.json : package manifest file
 - radar44.png : package icon 44px
 - radar88.png : package icon 88px

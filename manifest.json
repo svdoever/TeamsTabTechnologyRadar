@@ -19,13 +19,10 @@
             "88": "radar88.png"
     },
     "accentColor" : "#ffffff",
-    "configUrl": "https://raw.githack.com/svdoever/TeamsTabTechnologyRadar/master/tabConfigAdd.htm",
+    "configUrl": "https://microsoft-teams-tab-configurator.azurewebsites.net/technologyradar/tabconfig.html",
     "canUpdateConfig": true,
     "needsIdentity": false,
     "validDomains": [
-        "*.thoughtworks.com",
-        "*.google.com",
-        "*.github.com",
-        "*.githack.com"
+        "*.thoughtworks.com"
     ]
 }
